@@ -37,7 +37,7 @@ const ContactList = () => {
     <List>
       {filteredContacts.map(({ id, name, number }) => (
         <ContactItem key={id}>
-          <span>{name}</span> : <span>{number}</span>
+          {name} : {number}
           <Button type="button" onClick={() => deleteContactItem(id)}>
             Delete
           </Button>

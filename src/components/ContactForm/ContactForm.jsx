@@ -1,18 +1,13 @@
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import propTypes from 'prop-types';
 import { Button } from 'components/common/ButtonStyled';
-import {
-  ContactFormStyled,
-  ContactLabel,
-  ContactField,
-} from './ContactFormStyled';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContactValue } from 'redux/contacts/contactSelectors';
 import { addNewContacts } from 'redux/contacts/contactsOperations';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { FormStyled, Label, Input } from 'components/common/FormStyled';
 
 const schema = yup.object().shape({
   name: yup
@@ -57,25 +52,20 @@ export default function ContactForm() {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <ContactFormStyled>
-        <ContactLabel htmlFor="name">
+      <FormStyled>
+        <Label htmlFor="name">
           Name
-          <ContactField type="text" name="name" />
+          <Input type="text" name="name" />
           <ErrorMessage name="name" />
-        </ContactLabel>
+        </Label>
 
-        <ContactLabel htmlFor="number">
+        <Label htmlFor="number">
           Number
-          <ContactField type="tel" name="number" />
+          <Input type="tel" name="number" />
           <ErrorMessage name="number" />
-        </ContactLabel>
+        </Label>
         <Button type="submit">Add contact</Button>
-      </ContactFormStyled>
+      </FormStyled>
     </Formik>
   );
 }
-
-ContactForm.propTypes = {
-  initialValues: propTypes.object,
-  onSubmit: propTypes.func,
-};

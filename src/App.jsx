@@ -1,18 +1,57 @@
-import ContactForm from 'components/ContactForm';
-import Filter from 'components/Filter';
-import ContactList from 'components/ContactList';
-import { Container } from 'components/common/Container';
-import { Title } from 'components/common/TitleStyled';
+import 'modern-normalize';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { PublicRoute } from 'layouts/common/PublicRoute';
+import { PrivateRoute } from 'layouts/common/PrivateRoute';
+import { LoaderSpiner } from 'components/Loader/Loader';
 
-export default function App() {
+const AppBar = lazy(() => import('layouts/AppBar'));
+const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
+const Home = lazy(() => import('pages/Home'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
+
+export const App = () => {
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-
-      <Title>Contacts</Title>
-      <Filter />
-      <ContactList />
-    </Container>
+    <Suspense fallback={<LoaderSpiner/>}>
+      <Routes>
+        <Route path="/" element={<AppBar />}>
+          <Route
+            index
+            path="/"
+            element={
+              <PublicRoute>
+                <Home />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute restricted>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <PublicRoute restricted>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute>
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
-}
+};
