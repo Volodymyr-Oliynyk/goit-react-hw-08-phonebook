@@ -1,8 +1,8 @@
 import 'modern-normalize';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { PublicRoute } from 'layouts/common/PublicRoute';
-import { PrivateRoute } from 'layouts/common/PrivateRoute';
+import { PublicRoute } from 'hocs/PublicRoute';
+import { PrivateRoute } from 'hocs/PrivateRoute';
 import { LoaderSpiner } from 'components/Loader/Loader';
 
 const AppBar = lazy(() => import('layouts/AppBar'));
@@ -13,25 +13,17 @@ const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 
 export const App = () => {
   return (
-    <Suspense fallback={<LoaderSpiner/>}>
+    <Suspense fallback={<LoaderSpiner />}>
       <Routes>
         <Route path="/" element={<AppBar />}>
           <Route
             index
             path="/"
-            element={
-              <PublicRoute>
-                <Home />
-              </PublicRoute>
-            }
+            element={<PublicRoute component={<Home />} />}
           />
           <Route
             path="login"
-            element={
-              <PublicRoute restricted>
-                <LoginPage />
-              </PublicRoute>
-            }
+            element={<PublicRoute restricted><LoginPage /></PublicRoute>}
           />
           <Route
             path="register"

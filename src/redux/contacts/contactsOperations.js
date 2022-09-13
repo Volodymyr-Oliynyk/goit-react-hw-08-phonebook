@@ -1,10 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
-import {
-  getContacts,
-  addContact,
-  deleteContact,
-} from 'api/contactsApi.js';
+import { getContacts, addContact, deleteContact } from 'api/contacts.js';
 
 export const getAllContacts = createAsyncThunk(
   'contacts/requestStatus',
@@ -41,7 +37,7 @@ export const deleteCurrentContact = createAsyncThunk(
       const data = await getContacts();
       return data;
     } catch (error) {
-        return Notify.failure(`Sory, ${error}`);
+      return Notify.failure(`Sory, ${error}`);
     }
   }
 );
