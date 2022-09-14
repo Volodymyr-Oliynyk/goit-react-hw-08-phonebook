@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
@@ -19,7 +19,8 @@ export const HomeContainer = styled.div`
 // color: ${({ theme }) => theme.colors.secondary};
 // `;
 
-// export const HomeLink = styled(Link)`
+export const HomeLink = styled(Link)`
+color: aliceblue
 //   color: ${({ theme }) => theme.colors.secondary};
 //   font-weight: ${({ theme }) => theme.fontWeights.bold};
 // `;

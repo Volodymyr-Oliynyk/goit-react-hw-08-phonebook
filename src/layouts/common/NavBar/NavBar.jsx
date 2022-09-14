@@ -1,14 +1,16 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { RiHome7Fill } from 'react-i';
+import { BsJournalBookmarkFill } from 'react-icons/bs';
+import { List } from 'components/ContactList/ContactList.styled';
 
 export const NavBar = () => {
   const isLogged = useSelector(state => state.auth.isLogged);
   return (
-    <ul>
+    <List >
       <li>
         <Link to="/">
-                {/* <RiHome7Fill size="20px" /> */}
+          <h1>Phonebook  <BsJournalBookmarkFill size="20px" /></h1>
+          
         </Link>
       </li>
       {isLogged && (
@@ -16,6 +18,6 @@ export const NavBar = () => {
           <Link to="contacts">Contacts</Link>
         </li>
       )}
-    </ul>
+    </List>
   );
 };

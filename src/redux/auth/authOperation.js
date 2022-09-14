@@ -7,7 +7,7 @@ export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async user => {
     try {
-      const data = await register(user);
+      const {data} = await register(user);
       token.set(data.token);
       return data;
     } catch (error) {
@@ -18,7 +18,7 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk('auth/loginUser', async user => {
   try {
-    const data = await login(user);
+    const {data} = await login(user);
     token.set(data.token);
     return data;
   } catch (error) {
@@ -46,7 +46,7 @@ export const getUserData = createAsyncThunk(
     }
     token.set(persistedToken);
     try {
-      const data = await userData();
+      const {data} = await userData();
       return data;
     } catch (error) {
       Notify.error(`Please try to use other details. ${error}`);

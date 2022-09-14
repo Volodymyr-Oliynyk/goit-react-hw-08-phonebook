@@ -3,8 +3,8 @@ import { Button } from 'components/common/ButtonStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../redux/auth/authOperation';
 import { getIsLoggedIn, getUserName } from 'redux/auth/authSelector';
-import { Link } from 'react-router-dom';
-import { HomeContainer } from './Home.styled';
+// import { Link } from 'react-router-dom';
+import { HomeContainer, HomeLink } from './Home.styled';
 
 const StartPage = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -31,11 +31,11 @@ const StartPage = () => {
         <div>
           <p>
             To sign in to your account, click here -{' '}
-            <Link to="/login">LogIn</Link>
+            <HomeLink to="/login">LogIn</HomeLink>
           </p>
           <p>
             If you don't have an account, click here -{' '}
-            <Link to="/register">SignUp</Link>
+            <HomeLink to="/register">SignUp</HomeLink>
           </p>
         </div>
       )}
