@@ -4,10 +4,8 @@ import { Helmet } from 'react-helmet';
 const RegisterPage = () => {
   return (
     <div>
-      <Helmet>
-        <title>SignUp</title>
-      </Helmet>
-      <RegisterForm />
+     <title>Register please </title>
+          <RegisterForm />
     </div>
   );
 };

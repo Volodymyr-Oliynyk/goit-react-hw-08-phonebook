@@ -8,7 +8,7 @@ export const NavBar = () => {
     <ul>
       <li>
         <Link to="/">
-          {/* <RiHome7Fill size="20px" /> */}
+                {/* <RiHome7Fill size="20px" /> */}
         </Link>
       </li>
       {isLogged && (

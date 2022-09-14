@@ -1,4 +1,4 @@
-import { APIauth } from './axiosAPI';
+import { APIauth } from './contacts';
 
 export const register = user => APIauth.post(`/users/signup`, user);
 

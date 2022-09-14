@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { register, login, logout, userData } from 'api/auth';
-import { token } from 'api/axiosAPI';
+import { token } from 'api/contacts';
 import { Notify } from 'notiflix';
 
 export const registerUser = createAsyncThunk(

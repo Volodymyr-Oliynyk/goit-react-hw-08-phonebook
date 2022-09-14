@@ -1,5 +1,5 @@
 import { Button } from 'components/common/ButtonStyled';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../redux/auth/authOperation';
 import { getIsLoggedIn, getUserName } from 'redux/auth/authSelector';
@@ -12,9 +12,9 @@ const StartPage = () => {
 
   return (
     <div>
-      <Helmet>
+      
         <title>Home</title>
-      </Helmet>
+     
       <h1>
         Welcome, {isLoggedIn ? <span>{userName}!</span> : <span>user!</span>}
       </h1>

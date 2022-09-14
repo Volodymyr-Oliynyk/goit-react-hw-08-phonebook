@@ -1,15 +1,16 @@
-import { NavBar } from './common/NavBar/NavBar';
-import { UserMenu } from 'layouts/common/UserMenu/UserMenu';
-import { Outlet } from 'react-router-dom';
 import { Container } from 'components/common/Container';
+import { Outlet } from 'react-router-dom';
+import { Header } from './common/Header.styles';
+import { NavBar } from './common/NavBar/NavBar';
+import { UserMenu } from './common/UserMenu/UserMenu';
 
 const AppBar = () => {
   return (
     <Container>
-      <header>
+      <Header>
         <NavBar />
         <UserMenu />
-      </header>
+      </Header>
       <div>
         <Outlet />
       </div>

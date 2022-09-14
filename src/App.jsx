@@ -19,11 +19,19 @@ export const App = () => {
           <Route
             index
             path="/"
-            element={<PublicRoute component={<Home />} />}
+            element={
+              <PublicRoute>
+                <Home />
+              </PublicRoute>
+            }
           />
           <Route
             path="login"
-            element={<PublicRoute restricted><LoginPage /></PublicRoute>}
+            element={
+              <PublicRoute restricted>
+                <LoginPage />
+              </PublicRoute>
+            }
           />
           <Route
             path="register"

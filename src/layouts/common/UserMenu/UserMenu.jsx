@@ -29,7 +29,7 @@ export const UserMenu = () => {
             <Link to="register">Register</Link>
           </li>
           <li>
-            <Link to="login">Login</Link>
+            <Link to="login">LogIn</Link>
           </li>
         </ul>
       )}
