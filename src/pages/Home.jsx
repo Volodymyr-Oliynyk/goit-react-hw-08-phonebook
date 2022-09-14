@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../redux/auth/authOperation';
 import { getIsLoggedIn, getUserName } from 'redux/auth/authSelector';
 import { Link } from 'react-router-dom';
+import { HomeContainer } from './Home.styled';
 
 const StartPage = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -11,10 +12,9 @@ const StartPage = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      
-        <title>Home</title>
-     
+    <HomeContainer>
+      <title>Home</title>
+
       <h1>
         Welcome, {isLoggedIn ? <span>{userName}!</span> : <span>user!</span>}
       </h1>
@@ -39,7 +39,7 @@ const StartPage = () => {
           </p>
         </div>
       )}
-    </div>
+    </HomeContainer>
   );
 };
 
