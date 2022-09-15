@@ -20,11 +20,7 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
-    const user = {
-      email: values.email,
-      password: values.password,
-    };
-    dispatch(loginUser(user));
+    dispatch(loginUser(values));
     resetForm();
   };
 
@@ -44,11 +40,10 @@ export const LoginForm = () => {
             isSubmitting,
             handleChange,
             handleBlur,
-            handleSubmit,
           } = props;
 
           return (
-            <FormStyled onSubmit={handleSubmit}>
+            <FormStyled>
               <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
@@ -60,9 +55,7 @@ export const LoginForm = () => {
                 onBlur={handleBlur}
                 className={errors.email && touched.email && 'error'}
               />
-              {errors.email && touched.email && (
-                <div>{errors.email}</div>
-              )}
+              {errors.email && touched.email && <div>{errors.email}</div>}
 
               <Label htmlFor="password">Password</Label>
               <Input

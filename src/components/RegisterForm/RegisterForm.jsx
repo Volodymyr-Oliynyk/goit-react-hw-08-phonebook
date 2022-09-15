@@ -42,7 +42,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <>
+    <div>
       <Title>Create Account</Title>
       <Formik
         initialValues={{ name: '', email: '', password: '' }}
@@ -57,11 +57,11 @@ export const RegisterForm = () => {
             isSubmitting,
             handleChange,
             handleBlur,
-            handleSubmit,
+           
           } = props;
 
           return (
-            <FormStyled onSubmit={handleSubmit}>
+            <FormStyled >
               <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
@@ -113,6 +113,6 @@ export const RegisterForm = () => {
       <div>
         Do you have an account?<Link to="/login">Login</Link>
       </div>
-    </>
+    </div>
   );
 };

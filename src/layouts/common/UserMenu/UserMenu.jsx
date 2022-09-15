@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'redux/auth/authOperation';
 import { Navigate } from 'react-router';
-import { Button } from 'components/common/ButtonStyled';
-import { Link } from 'react-router-dom';
-
+import {  SecondaryButton } from 'components/common/ButtonStyled';
+import { NavBarLink } from '../NavBar/NavBar.styled';
 
 export const UserMenu = () => {
   const name = useSelector(state => state.auth.name);
-  const isLogged = useSelector(state => state.auth.isLogged);
+  const isLogged = useSelector(state => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
@@ -20,17 +19,17 @@ export const UserMenu = () => {
       {isLogged ? (
         <div>
           <p>You are logged in as: {name}</p>
-          <Button type="button" onClick={logoutHandler}>
-            EXIT
-          </Button>
+          <SecondaryButton type="button" onClick={logoutHandler}>
+            LogOut
+          </SecondaryButton>
         </div>
       ) : (
         <ul>
           <li>
-            <Link to="register">Register</Link>
+            <NavBarLink to="register">Register</NavBarLink>
           </li>
           <li>
-            <Link to="login">LogIn</Link>
+            <NavBarLink to="login">LogIn</NavBarLink>
           </li>
         </ul>
       )}

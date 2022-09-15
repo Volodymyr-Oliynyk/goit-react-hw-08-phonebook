@@ -1,9 +1,9 @@
 import { Button } from 'components/common/ButtonStyled';
-// import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../redux/auth/authOperation';
+import { Link } from 'react-router-dom';
+import { logoutUser } from 'redux/auth/authOperation';
 import { getIsLoggedIn, getUserName } from 'redux/auth/authSelector';
-// import { Link } from 'react-router-dom';
+// import ContactsPage from './ContactsPage/ContactsPage';
 import { HomeContainer, HomeLink } from './Home.styled';
 
 const StartPage = () => {
@@ -15,18 +15,20 @@ const StartPage = () => {
     <HomeContainer>
       <title>Home</title>
 
-      <h1>
+      <h3>
         Welcome, {isLoggedIn ? <span>{userName}!</span> : <span>user!</span>}
-      </h1>
+      </h3>
 
-      <h2>You are in the Phonebook app</h2>
+      <h3>You are in the Phonebook app</h3>
       {isLoggedIn ? (
-        <div>
+        <>
+        <p>To add a new contact</p>
+          <Link to="/contacts"> Click here </Link>
           <p>
             If you want to leave your account, click here -{' '}
             <Button onClick={() => dispatch(logoutUser())}>LogOut</Button>
           </p>
-        </div>
+        </>
       ) : (
         <div>
           <p>
