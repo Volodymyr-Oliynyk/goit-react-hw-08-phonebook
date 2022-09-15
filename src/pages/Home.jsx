@@ -1,11 +1,11 @@
 import { Button } from 'components/common/ButtonStyled';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+
 import { logoutUser } from 'redux/auth/authOperation';
 import { getIsLoggedIn, getUserName } from 'redux/auth/authSelector';
-// import ContactsPage from './ContactsPage/ContactsPage';
+
 import { HomeContainer, HomeLink, HomeTitle, HomeText } from './Home.styled';
-// import { Helmet } from 'react-helmet';
+
 import { ImExit } from 'react-icons/im';
 
 const StartPage = () => {
