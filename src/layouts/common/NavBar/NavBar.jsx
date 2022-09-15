@@ -1,26 +1,30 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BsJournalBookmarkFill } from 'react-icons/bs';
-import { List } from 'components/ContactList/ContactList.styled';
-import { NavBarItem } from './NavBar.styled';
+import {HiHome}from 'react-icons/hi'
+import { NavBarItem, NavBarList, NavContainer } from './NavBar.styled';
+import { Title } from 'components/common/TitleStyled';
 
 export const NavBar = () => {
-  const isLogged = useSelector(state => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   return (
-    <List>
-      {isLogged ? (
-        <NavBarItem>
-          <Link to="contacts"> Contacts  </Link>
-        </NavBarItem>
-      ) : (
+    <NavContainer>
+      <NavBarList>
         <NavBarItem>
           <Link to="/">
-            <h1>
-              Phonebook <BsJournalBookmarkFill size="20px" />
-            </h1>
+            <Title>
+              Home <HiHome size="20px" />
+            </Title>
           </Link>
+        </NavBarItem>
+        {isLoggedIn && (
+          <NavBarItem>
+            <Link to="contacts">
+              <Title>Contacts <BsJournalBookmarkFill size="18px" /></Title>{' '}
+            </Link>
           </NavBarItem>
-      )}
-    </List>
+        )}
+      </NavBarList>
+    </NavContainer>
   );
 };

@@ -6,7 +6,7 @@ import { PrivateRoute } from 'hocs/PrivateRoute';
 import { LoaderSpiner } from 'components/Loader/Loader';
 
 const AppBar = lazy(() => import('layouts/AppBar'));
-const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
 const Home = lazy(() => import('pages/Home'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
@@ -44,7 +44,7 @@ export const App = () => {
           <Route
             path="contacts"
             element={
-              <PrivateRoute>
+              <PrivateRoute restricted>
                 <ContactsPage />
               </PrivateRoute>
             }

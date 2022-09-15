@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const NavContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+`;
 export const NavBarList = styled.ul`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  padding-left: 0;
+  margin-right: 40px;
 `;
 
 export const NavBarItem = styled.li`
@@ -16,7 +23,7 @@ export const NavBarItem = styled.li`
 export const NavBarLink = styled(NavLink)`
   display: block;
   position: relative;
-  font-size: 14px;
+  font-size: ${p => p.theme.fontSizes.sm};
   font-weight: bold;
   text-transform: uppercase;
   color: white;
