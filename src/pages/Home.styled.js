@@ -13,11 +13,11 @@ font-size: ${({ theme }) => theme.fontSizes.md};
 
 export const HomeText = styled.p`
 font-size: ${({ theme }) => theme.fontSizes.sm};
-color: ${({ theme }) => theme.colors.secondary};
+color: ${({ theme }) => theme.colors.text};
 `;
 
 export const HomeLink = styled(Link)`
-color: aliceblue
-  color: ${({ theme }) => theme.colors.secondary};
+
+  color: ${({ theme }) => theme.colors.accent};
 //   font-weight: ${({ theme }) => theme.fontWeights.bold};
  `;

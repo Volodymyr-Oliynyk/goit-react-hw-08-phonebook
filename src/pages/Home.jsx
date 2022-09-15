@@ -27,7 +27,7 @@ const StartPage = () => {
           <p>
             If you want to leave your account, click here -{' '}
             <Button onClick={() => dispatch(logoutUser())}>
-              LogOut <ImExit size="16px" marginRight="2px" />
+              LogOut <ImExit size="16px"  />
             </Button>
           </p>
         </>

@@ -6,7 +6,7 @@ import { ContactsContainer } from './ContactsPage.styled';
 const ContactsPage = () => {
   return (
     <ContactsContainer>
-          <ContactForm />
+      <ContactForm />
       <Filter />
       <ContactList />
     </ContactsContainer>
