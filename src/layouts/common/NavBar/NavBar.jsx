@@ -13,14 +13,14 @@ export const NavBar = () => {
         <NavBarItem>
           <Link to="/">
             <Title>
-              Home <HiHome size="20px" />
+              Home <HiHome size="16px" />
             </Title>
           </Link>
         </NavBarItem>
         {isLoggedIn && (
           <NavBarItem>
             <Link to="contacts">
-              <Title>Contacts <BsJournalBookmarkFill size="18px" /></Title>{' '}
+              <Title>Contacts <BsJournalBookmarkFill size="14px" /></Title>{' '}
             </Link>
           </NavBarItem>
         )}

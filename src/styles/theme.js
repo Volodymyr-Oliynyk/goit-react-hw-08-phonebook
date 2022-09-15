@@ -16,11 +16,11 @@ export const theme = {
   },
 
   fontSizes: {
-    xs: '12 px',
-    sm: '14 px',
-    md: '16 px',
-    lg: '18 px',
-    xl: '20 px',
+    xs: '12px',
+    sm: '14px',
+    md: '16px',
+    lg: '18px',
+    xl: '20px',
   },
 
   fontWeights: {

@@ -6,7 +6,7 @@ export const getAllContacts = createAsyncThunk(
   'contacts/requestStatus',
   async () => {
     try {
-      const data = await getContacts();
+      const {data} = await getContacts();
       return data;
     } catch (error) {
       return Notify.failure(`Sory, ${error}`);
@@ -20,7 +20,7 @@ export const addNewContacts = createAsyncThunk(
     try {
       await addContact(contact);
       Notify.success('Contact added!');
-      const data = await getContacts();
+      const {data} = await getContacts();
       return data;
     } catch (error) {
       return Notify.failure(`Sory, ${error}`);
@@ -34,7 +34,7 @@ export const deleteCurrentContact = createAsyncThunk(
     try {
       await deleteContact(id);
       Notify.success('Contact deleted!');
-      const data = await getContacts();
+      const {data} = await getContacts();
       return data;
     } catch (error) {
       return Notify.failure(`Sory, ${error}`);
