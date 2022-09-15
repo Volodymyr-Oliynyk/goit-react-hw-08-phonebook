@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { logoutUser } from 'redux/auth/authOperation';
 import { getIsLoggedIn, getUserName } from 'redux/auth/authSelector';
 // import ContactsPage from './ContactsPage/ContactsPage';
-import { HomeContainer, HomeLink } from './Home.styled';
-import { Helmet } from 'react-helmet';
+import { HomeContainer, HomeLink, HomeTitle, HomeText } from './Home.styled';
+// import { Helmet } from 'react-helmet';
+import { ImExit } from 'react-icons/im';
 
 const StartPage = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -14,22 +15,20 @@ const StartPage = () => {
 
   return (
     <HomeContainer>
-      <Helmet>
-        <title>Home</title>
-      </Helmet>
-
-      <h3>
+      <HomeTitle>
         Welcome, {isLoggedIn ? <span>{userName}!</span> : <span>user!</span>}
-      </h3>
+      </HomeTitle>
 
-      <h3>You are in the Phonebook app</h3>
+      <HomeTitle>You are in the Phonebook app</HomeTitle>
       {isLoggedIn ? (
         <>
-          <p>To add a new contact</p>
-          <Link to="/contacts"> Click here </Link>
+          <HomeText>To add a new contact</HomeText>
+          <HomeLink to="/contacts"> Click here </HomeLink>
           <p>
             If you want to leave your account, click here -{' '}
-            <Button onClick={() => dispatch(logoutUser())}>LogOut</Button>
+            <Button onClick={() => dispatch(logoutUser())}>
+              LogOut <ImExit size="16px" marginRight="2px" />
+            </Button>
           </p>
         </>
       ) : (

@@ -6,21 +6,18 @@ export const HomeContainer = styled.div`
   text-align: center;
 `;
 
-// export const HomeTitle = styled.h1`
-// font-size: ${({ theme }) => theme.fontSizes.l1};
-// `;
+export const HomeTitle = styled.h3`
+font-size: ${({ theme }) => theme.fontSizes.md};
+`;
 
-// export const HomeSubTitle = styled.h2`
-// font-size: ${({ theme }) => theme.fontSizes.l};
-// `;
 
-// export const HomeText = styled.p`
-// font-size: ${({ theme }) => theme.fontSizes.ml};
-// color: ${({ theme }) => theme.colors.secondary};
-// `;
+export const HomeText = styled.p`
+font-size: ${({ theme }) => theme.fontSizes.sm};
+color: ${({ theme }) => theme.colors.secondary};
+`;
 
 export const HomeLink = styled(Link)`
 color: aliceblue
-//   color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
 //   font-weight: ${({ theme }) => theme.fontWeights.bold};
-// `;
+ `;
