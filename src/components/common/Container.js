@@ -5,10 +5,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 480px;
+  width: 500px;
   height: auto;
   margin: 0 auto;
   padding-top: 20px;
+  padding-bottom: 20px;
   background-color: ${p => p.theme.colors.background};
   background-position: center;
   background-size: cover;

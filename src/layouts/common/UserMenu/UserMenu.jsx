@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'redux/auth/authOperation';
 import { Navigate } from 'react-router';
-import {  SecondaryButton } from 'components/common/ButtonStyled';
+import { Button } from 'components/common/ButtonStyled';
 import { NavBarLink } from '../NavBar/NavBar.styled';
 
 export const UserMenu = () => {
@@ -19,9 +19,9 @@ export const UserMenu = () => {
       {isLogged ? (
         <div>
           <p>You are logged in as: {name}</p>
-          <SecondaryButton type="button" onClick={logoutHandler}>
+          <Button type="button" onClick={logoutHandler}>
             LogOut
-          </SecondaryButton>
+          </Button>
         </div>
       ) : (
         <ul>

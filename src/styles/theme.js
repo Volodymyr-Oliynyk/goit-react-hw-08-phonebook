@@ -1,8 +1,8 @@
 export const theme = {
   colors: {
-    text: '#0F0E0E',
-    background: '#61ead8',
-    backgroundButton: '#61ddea',
+    text: '#000',
+    background: '#b5c9e8',
+    backgroundButton: '#2844d1',
     primary: '#ff0000',
     border: '#c2c2c2',
     accent: '#2a9fe2',

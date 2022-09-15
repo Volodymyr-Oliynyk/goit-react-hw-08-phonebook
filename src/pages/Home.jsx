@@ -5,6 +5,7 @@ import { logoutUser } from 'redux/auth/authOperation';
 import { getIsLoggedIn, getUserName } from 'redux/auth/authSelector';
 // import ContactsPage from './ContactsPage/ContactsPage';
 import { HomeContainer, HomeLink } from './Home.styled';
+import { Helmet } from 'react-helmet';
 
 const StartPage = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -13,7 +14,9 @@ const StartPage = () => {
 
   return (
     <HomeContainer>
-      <title>Home</title>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
 
       <h3>
         Welcome, {isLoggedIn ? <span>{userName}!</span> : <span>user!</span>}
@@ -22,7 +25,7 @@ const StartPage = () => {
       <h3>You are in the Phonebook app</h3>
       {isLoggedIn ? (
         <>
-        <p>To add a new contact</p>
+          <p>To add a new contact</p>
           <Link to="/contacts"> Click here </Link>
           <p>
             If you want to leave your account, click here -{' '}

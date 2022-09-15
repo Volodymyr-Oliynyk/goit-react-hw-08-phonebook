@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const NavBarList = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const NavBarItem = styled.li`

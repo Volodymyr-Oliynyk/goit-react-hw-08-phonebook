@@ -8,9 +8,9 @@ const AppBar = () => {
   return (
     <Container>
       <Header>
-        <NavBar />
-        <UserMenu />
-      </Header>
+          <NavBar />
+          <UserMenu />
+       </Header>
       <div>
         <Outlet />
       </div>
